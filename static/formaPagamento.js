@@ -91,5 +91,6 @@ async function excluirPagamento(id) {
     }
 
     alert(dados.msg);
-    listarPagamentos();
+    listarPagamentos()
 }
+listarPagamentos();

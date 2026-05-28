@@ -89,7 +89,7 @@ async function excluirPedido(id) {
   alert(dados.msg);
   listarPedidos();
 }
-
+listarPedidos();
 async function iniciar() {
   await carregarSelects();
   listarPedidos();

@@ -87,3 +87,4 @@ async function excluirProduto(id) {
     alert(dados.msg);
     listarProdutos();
 }
+listarProdutos();
