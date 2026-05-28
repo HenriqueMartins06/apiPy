@@ -111,7 +111,7 @@ async function excluirItem(id) {
   alert(dados.msg);
   listarItens();
 }
-listarItens();
+
 async function iniciar() {
   await carregarSelects();
   listarItens();
