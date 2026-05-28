@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Produtos - Lanchonete</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo">
+      <h2>🍔 Lanchonete</h2>
+      <p>Sistema de Gestão</p>
+    </div>
+
+    <a href="/">🏠 Dashboard</a>
+    <a href="/clientes-page">👥 Clientes</a>
+    <a href="/produtos-page">🍟 Produtos</a>
+    <a href="/pedidos-page">🧾 Pedidos</a>
+    <a href="/item-pedido-page">🛒 Itens do Pedido</a>
+    <a href="/forma-pagamento-page">💳 Formas de Pagamento</a>
+  </aside>
+
+  <main class="conteudo">
+    <div class="topo">
+      <h1>Produtos</h1>
+      <p>Cadastre, visualize, edite e exclua produtos.</p>
+    </div>
+
+    <div class="card">
+      <h2>Cadastro de Produto</h2>
+
+      <form id="formProduto">
+        <input type="hidden" id="produtoId">
+
+        <label>Nome</label>
+        <input id="nomeProduto" type="text" placeholder="Digite o nome do produto">
+
+        <label>Preço</label>
+        <input id="precoProduto" type="number" step="0.01" placeholder="Digite o preço">
+
+        <button type="submit">Salvar Produto</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Lista de Produtos</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+
+        <tbody id="tabelaProdutos">
+          <tr>
+            <td colspan="4">Carregando produtos...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="/static/produtos.js"></script>
+</body>
+</html>

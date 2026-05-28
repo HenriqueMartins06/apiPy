@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Itens do Pedido - Lanchonete</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+
+    <div class="logo">
+      <h2>🍔 Lanchonete</h2>
+      <p>Sistema de Gestão</p>
+    </div>
+
+    <a href="/">🏠 Dashboard</a>
+    <a href="/clientes-page">👥 Clientes</a>
+    <a href="/produtos-page">🍟 Produtos</a>
+    <a href="/pedidos-page">🧾 Pedidos</a>
+    <a href="/item-pedido-page">🛒 Itens do Pedido</a>
+    <a href="/forma-pagamento-page">💳 Formas de Pagamento</a>
+
+  </aside>
+
+  <main class="conteudo">
+
+    <div class="topo">
+      <h1>Itens do Pedido</h1>
+      <p>Adicione produtos aos pedidos realizados.</p>
+    </div>
+
+    <div class="card">
+      <h2>Adicionar Item</h2>
+
+      <form id="formItemPedido">
+        <input type="hidden" id="itemPedidoId">
+
+        <div class="campo">
+          <label for="pedidoItem">Pedido</label>
+          <select id="pedidoItem">
+            <option value="">Selecione um pedido</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="produtoItem">Produto</label>
+          <select id="produtoItem">
+            <option value="">Selecione um produto</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="quantidadeItem">Quantidade</label>
+          <input type="number" id="quantidadeItem" placeholder="Digite a quantidade">
+        </div>
+
+        <button type="submit">Salvar Item</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Itens por Pedido</h2>
+
+      <div id="listaItensPedido">
+        Carregando itens...
+      </div>
+    </div>
+
+  </main>
+
+  <script src="/static/itemPedido.js"></script>
+</body>
+</html>

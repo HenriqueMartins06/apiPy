@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Formas de Pagamento - Lanchonete</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo">
+      <h2>🍔 Lanchonete</h2>
+      <p>Sistema de Gestão</p>
+    </div>
+
+    <a href="/">🏠 Dashboard</a>
+    <a href="/clientes-page">👥 Clientes</a>
+    <a href="/produtos-page">🍟 Produtos</a>
+    <a href="/pedidos-page">🧾 Pedidos</a>
+    <a href="/item-pedido-page">🛒 Itens do Pedido</a>
+    <a href="/forma-pagamento-page">💳 Formas de Pagamento</a>
+  </aside>
+
+  <main class="conteudo">
+    <div class="topo">
+      <h1>Formas de Pagamento</h1>
+      <p>Cadastre, visualize, edite e exclua formas de pagamento.</p>
+    </div>
+
+    <div class="card">
+      <h2>Cadastro de Forma de Pagamento</h2>
+
+      <form id="formPagamento">
+        <input type="hidden" id="pagamentoId">
+
+        <label>Tipo</label>
+        <input id="tipoPagamento" type="text" placeholder="Pix, Cartão, Dinheiro...">
+
+        <button type="submit">Salvar Forma</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Lista de Formas de Pagamento</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Tipo</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+
+        <tbody id="tabelaPagamentos">
+          <tr>
+            <td colspan="3">Carregando formas de pagamento...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="/static/formaPagamento.js"></script>
+</body>
+</html>
