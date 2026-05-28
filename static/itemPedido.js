@@ -4,7 +4,6 @@ const API_PRODUTOS = "http://127.0.0.1:5001/produtos";
 
 const form = document.getElementById("formItemPedido");
 const lista = document.getElementById("listaItensPedido");
-
 const itemPedidoId = document.getElementById("itemPedidoId");
 const pedidoItem = document.getElementById("pedidoItem");
 const produtoItem = document.getElementById("produtoItem");
@@ -42,7 +41,27 @@ async function listarItens() {
   lista.innerHTML = "";
 
   Object.keys(agrupados).forEach(pedidoId => {
-    let html = `<div class="card"><h3>Pedido #${pedidoId}</h3>`;
+    let total = 0;
+
+    agrupados[pedidoId].forEach(i => {
+      const produto = produtos.find(p => p.id === i.produto_id);
+
+      if (produto) {
+        total += Number(produto.preco) * Number(i.quantidade);
+      }
+    });
+
+    let html = `
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="h5 mb-0">Pedido #${pedidoId}</h3>
+            <span class="badge bg-success fs-6">
+              Total: R$ ${total.toFixed(2)}
+            </span>
+          </div>
+    `;
 
     agrupados[pedidoId].forEach(i => {
       const produto = produtos.find(p => p.id === i.produto_id);
@@ -51,18 +70,30 @@ async function listarItens() {
         <div class="linha-item">
           <div>
             <strong>${produto ? produto.nome : i.produto_id}</strong>
-            <p>Quantidade: ${i.quantidade}</p>
+            <p class="mb-0 text-muted">
+              Quantidade: ${i.quantidade}
+              ${produto ? ` | Unitário: R$ ${Number(produto.preco).toFixed(2)}` : ""}
+            </p>
           </div>
 
           <div class="acoes">
-            <button onclick="editarItem(${i.id}, ${i.pedido_id}, ${i.produto_id}, ${i.quantidade})">Editar</button>
-            <button onclick="excluirItem(${i.id})">Excluir</button>
+            <button class="btn btn-sm btn-primary" onclick="editarItem(${i.id}, ${i.pedido_id}, ${i.produto_id}, ${i.quantidade})">
+              Editar
+            </button>
+
+            <button class="btn btn-sm btn-danger" onclick="excluirItem(${i.id})">
+              Excluir
+            </button>
           </div>
         </div>
       `;
     });
 
-    html += `</div>`;
+    html += `
+        </div>
+      </div>
+    `;
+
     lista.innerHTML += html;
   });
 }

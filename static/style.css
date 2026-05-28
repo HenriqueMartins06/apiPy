@@ -1,6 +1,4 @@
 *{
-  margin:0;
-  padding:0;
   box-sizing:border-box;
 }
 
@@ -8,151 +6,60 @@ body{
   display:flex;
   min-height:100vh;
   font-family:Arial, sans-serif;
-  background:#f3f4f6;
 }
 
 /* MENU */
 .sidebar{
-  width:240px;
+  width:250px;
   min-height:100vh;
   background:#b91c1c;
-  padding:20px;
+  padding:22px;
+  position:fixed;
 }
 
 .logo{
   color:white;
-  margin-bottom:25px;
+  margin-bottom:28px;
 }
 
 .logo h2{
-  margin-bottom:6px;
+  font-size:24px;
 }
 
 .logo p{
   font-size:14px;
+  margin:0;
+  opacity:.85;
 }
 
 .sidebar a{
   display:block;
   color:white;
   text-decoration:none;
-  padding:12px;
-  border-radius:8px;
-  margin-bottom:10px;
-  background:#ffffff15;
+  padding:12px 14px;
+  border-radius:10px;
+  margin-bottom:8px;
 }
 
 .sidebar a:hover{
-  background:#ffffff30;
+  background:rgba(255,255,255,.18);
 }
 
 /* CONTEÚDO */
 .conteudo{
-  flex:1;
-  padding:30px;
+  margin-left:250px;
+  width:calc(100% - 250px);
+  padding:32px;
 }
 
-.topo{
-  margin-bottom:25px;
+/* AJUSTES */
+.card{
+  border-radius:14px;
 }
 
-.topo h1{
-  font-size:32px;
-}
-
-/* CARDS */
-.card,
-.stat{
-  background:white;
-  padding:22px;
-  border-radius:12px;
-  box-shadow:0 3px 10px #00000010;
-  margin-bottom:20px;
-}
-
-/* DASHBOARD */
-.dashboard{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-  margin-bottom:20px;
-}
-
-.stat{
-  min-height:120px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.stat h3{
-  color:#666;
-  font-size:18px;
-  margin-bottom:10px;
-}
-
-.stat p{
-  font-size:42px;
-  font-weight:bold;
-  color:#b91c1c;
-}
-
-/* FORM */
-label{
-  display:block;
-  font-weight:bold;
-  margin-bottom:5px;
-}
-
-input,
-select{
-  width:100%;
-  padding:12px;
-  margin-bottom:15px;
-  border:1px solid #ccc;
-  border-radius:8px;
-}
-
-/* BOTÕES */
-button{
-  border:none;
-  background:#b91c1c;
-  color:white;
-  padding:10px 16px;
-  border-radius:8px;
-  cursor:pointer;
-}
-
-button:hover{
-  background:#991b1b;
-}
-
-/* TABELA */
-table{
-  width:100%;
-  border-collapse:collapse;
-  margin-top:20px;
-}
-
-th,
-td{
-  padding:14px;
-  text-align:left;
-}
-
-th{
-  background:#b91c1c;
-  color:white;
-}
-
-tr:nth-child(even){
-  background:#f9fafb;
-}
-
-/* AÇÕES */
 .acoes{
   display:flex;
-  gap:10px;
+  gap:8px;
 }
 
 .linha-item{
