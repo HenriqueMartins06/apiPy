@@ -5,61 +5,125 @@
 body{
   display:flex;
   min-height:100vh;
-  font-family:Arial, sans-serif;
+  font-family:'Segoe UI', Arial, sans-serif;
+  background:#f5f7fb;
+  color:#1f2937;
 }
 
-/* MENU */
 .sidebar{
   width:250px;
   min-height:100vh;
-  background:#b91c1c;
-  padding:22px;
   position:fixed;
+  padding:24px 18px;
+  background:#111827;
 }
 
 .logo{
   color:white;
-  margin-bottom:28px;
+  margin-bottom:30px;
 }
 
 .logo h2{
   font-size:24px;
+  margin-bottom:4px;
 }
 
 .logo p{
   font-size:14px;
-  margin:0;
-  opacity:.85;
+  color:#9ca3af;
 }
 
 .sidebar a{
   display:block;
-  color:white;
+  color:#d1d5db;
   text-decoration:none;
   padding:12px 14px;
-  border-radius:10px;
   margin-bottom:8px;
+  border-radius:10px;
 }
 
 .sidebar a:hover{
-  background:rgba(255,255,255,.18);
+  background:#2563eb;
+  color:white;
 }
 
-/* CONTEÚDO */
 .conteudo{
   margin-left:250px;
   width:calc(100% - 250px);
   padding:32px;
 }
 
-/* AJUSTES */
 .card{
-  border-radius:14px;
+  border:0 !important;
+  border-radius:16px !important;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+}
+
+.btn{
+  border-radius:10px !important;
+  font-weight:600 !important;
+}
+
+.btn-primary{
+  background:#2563eb !important;
+  border:0 !important;
+}
+
+.btn-primary:hover{
+  background:#1d4ed8 !important;
+}
+
+.btn-outline-danger{
+  color:#2563eb !important;
+  border-color:#2563eb !important;
+}
+
+.btn-outline-danger:hover{
+  background:#2563eb !important;
+  color:white !important;
+}
+
+.btn-danger{
+  background:#ef4444 !important;
+  border:0 !important;
+}
+
+.btn-danger:hover{
+  background:#dc2626 !important;
+}
+
+.text-danger{
+  color:#2563eb !important;
+}
+
+.bg-success{
+  background:#2563eb !important;
 }
 
 .acoes{
   display:flex;
   gap:8px;
+}
+
+.table{
+  margin-bottom:0;
+}
+
+.table th{
+  color:#6b7280;
+  font-size:14px;
+}
+
+.form-control,
+.form-select{
+  border-radius:10px !important;
+  padding:10px 12px !important;
+}
+
+.form-control:focus,
+.form-select:focus{
+  border-color:#2563eb;
+  box-shadow:0 0 0 .2rem rgba(37,99,235,.15);
 }
 
 .linha-item{
@@ -68,4 +132,9 @@ body{
   align-items:center;
   padding:12px 0;
   border-bottom:1px solid #eee;
+}
+
+.badge{
+  border-radius:10px;
+  padding:8px 12px;
 }

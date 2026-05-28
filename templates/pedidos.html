@@ -9,6 +9,11 @@
     rel="stylesheet"
   >
 
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
+
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body class="bg-light">
@@ -16,16 +21,39 @@
   <aside class="sidebar">
 
     <div class="logo">
-      <h2>🍔 Lanchonete</h2>
+      <h2><i class="bi bi-shop"></i> Lanchonete</h2>
       <p>Sistema de Gestão</p>
     </div>
 
-    <a href="/">🏠 Dashboard</a>
-    <a href="/clientes-page">👥 Clientes</a>
-    <a href="/produtos-page">🍟 Produtos</a>
-    <a href="/pedidos-page">🧾 Pedidos</a>
-    <a href="/item-pedido-page">🛒 Itens do Pedido</a>
-    <a href="/forma-pagamento-page">💳 Formas de Pagamento</a>
+    <a href="/">
+      <i class="bi bi-house-door"></i>
+      Dashboard
+    </a>
+
+    <a href="/clientes-page">
+      <i class="bi bi-people"></i>
+      Clientes
+    </a>
+
+    <a href="/produtos-page">
+      <i class="bi bi-bag"></i>
+      Produtos
+    </a>
+
+    <a href="/pedidos-page">
+      <i class="bi bi-receipt"></i>
+      Pedidos
+    </a>
+
+    <a href="/item-pedido-page">
+      <i class="bi bi-cart"></i>
+      Itens do Pedido
+    </a>
+
+    <a href="/forma-pagamento-page">
+      <i class="bi bi-credit-card"></i>
+      Formas de Pagamento
+    </a>
 
   </aside>
 
@@ -42,7 +70,10 @@
 
       <div class="card-body">
 
-        <h2 class="h5 mb-4">Criar Pedido</h2>
+        <h2 class="h5 mb-4">
+          <i class="bi bi-receipt-cutoff"></i>
+          Criar Pedido
+        </h2>
 
         <form id="formPedido">
 
@@ -77,6 +108,7 @@
           </div>
 
           <button type="submit" class="btn btn-danger">
+            <i class="bi bi-check-circle"></i>
             Salvar Pedido
           </button>
 
@@ -90,7 +122,10 @@
 
       <div class="card-body">
 
-        <h2 class="h5 mb-4">Lista de Pedidos</h2>
+        <h2 class="h5 mb-4">
+          <i class="bi bi-table"></i>
+          Lista de Pedidos
+        </h2>
 
         <div class="table-responsive">
 
