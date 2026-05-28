@@ -77,14 +77,19 @@ function editarPagamento(id, tipo) {
 }
 
 async function excluirPagamento(id) {
-    const confirmar = confirm("Tem certeza que deseja excluir esta forma de pagamento?");
-    if (!confirmar) return;
+    if (!confirm("Tem certeza que deseja excluir esta forma de pagamento?")) return;
 
-    await fetch(`${API_PAGAMENTOS}/${id}`, {
+    const resposta = await fetch(`${API_PAGAMENTOS}/${id}`, {
         method: "DELETE"
     });
 
+    const dados = await resposta.json();
+
+    if (!resposta.ok) {
+        alert(dados.erro);
+        return;
+    }
+
+    alert(dados.msg);
     listarPagamentos();
 }
-
-listarPagamentos();

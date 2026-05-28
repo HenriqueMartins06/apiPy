@@ -75,7 +75,18 @@ function editarPedido(id, clienteId, formaId) {
 async function excluirPedido(id) {
   if (!confirm("Tem certeza que deseja excluir este pedido?")) return;
 
-  await fetch(`${API_PEDIDOS}/${id}`, { method: "DELETE" });
+  const resposta = await fetch(`${API_PEDIDOS}/${id}`, {
+    method: "DELETE"
+  });
+
+  const dados = await resposta.json();
+
+  if (!resposta.ok) {
+    alert(dados.erro);
+    return;
+  }
+
+  alert(dados.msg);
   listarPedidos();
 }
 

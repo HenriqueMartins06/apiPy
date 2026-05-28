@@ -97,10 +97,20 @@ function editarItem(id, pedidoId, produtoId, quantidade) {
 async function excluirItem(id) {
   if (!confirm("Deseja excluir este item?")) return;
 
-  await fetch(`${API_ITENS}/${id}`, { method: "DELETE" });
+  const resposta = await fetch(`${API_ITENS}/${id}`, {
+    method: "DELETE"
+  });
+
+  const dados = await resposta.json();
+
+  if (!resposta.ok) {
+    alert(dados.erro);
+    return;
+  }
+
+  alert(dados.msg);
   listarItens();
 }
-
 async function iniciar() {
   await carregarSelects();
   listarItens();

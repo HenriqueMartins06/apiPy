@@ -71,14 +71,19 @@ function editarProduto(id, nome, preco) {
 }
 
 async function excluirProduto(id) {
-    const confirmar = confirm("Tem certeza que deseja excluir este produto?");
-    if (!confirmar) return;
+    if (!confirm("Tem certeza que deseja excluir este produto?")) return;
 
-    await fetch(`${API_PRODUTOS}/${id}`, {
+    const resposta = await fetch(`${API_PRODUTOS}/${id}`, {
         method: "DELETE"
     });
 
+    const dados = await resposta.json();
+
+    if (!resposta.ok) {
+        alert(dados.erro);
+        return;
+    }
+
+    alert(dados.msg);
     listarProdutos();
 }
-
-listarProdutos();
